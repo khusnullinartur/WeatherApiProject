@@ -22,3 +22,9 @@ https://youtu.be/y57LT58cBRE
 - Add strategy pattern to support multiple Weather API providers;
 - Functionality to get more details on the specific date;
 - Additional handling on unsupported characters in the search box
+
+**Screenshots:**
+
+![Screenshot 2023-10-12 at 14 49 50](https://github.com/khusnullinartur/WeatherApiProject/assets/76656930/ed19ac37-9f4a-4c45-a698-1340a85d1fc6)
+![Screenshot 2023-10-12 at 14 49 41](https://github.com/khusnullinartur/WeatherApiProject/assets/76656930/053dfbbd-36c5-425e-a27c-1f3c7bd88cd2)
+
