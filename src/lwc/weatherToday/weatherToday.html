@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-grid slds-wrap slds-p-horizontal_medium slds-m-top_small slds-p-bottom_small slds-border_bottom slds-border_top">
+        <div class="slds-col slds-size_1-of-1 slds-m-top_x-small region-heading-text">
+            {weatherData.location.name}, {weatherData.location.country}
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+            <span class="temperature-heading-text">{weatherData.current.temp_f}°</span>
+            <img src={weatherData.current.condition.icon} class="large-icon slds-m-right_xx-small"/>
+            <div class="slds-col slds-size_1-of-1">
+                <span>{weatherData.current.condition.text}. Feels Like {weatherData.current.feelslike_f}°. </span>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+            <div class="slds-col slds-size_1-of-1 slds-m-top_small">
+                <img src={humidityIcon} title="Humidity" class="small-thin-icon slds-m-right_xx-small"/>
+                <span>
+                    {weatherData.current.humidity}%
+                </span>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-m-top_small">
+                <img src={windIcon} title="Wind" class="small-icon slds-m-right_xx-small"/>
+                <span>
+                    <span class="slds-m-right_xx-small">
+                        {weatherData.current.wind_dir}
+                    </span>
+                    <lightning-formatted-number value={weatherData.current.wind_mph} maximum-fraction-digits="0"
+                                                class="slds-m-right_xx-small"></lightning-formatted-number>
+                    mph
+                </span>
+            </div>
+        </div>
+    </div>
+</template>

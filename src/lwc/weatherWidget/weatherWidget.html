@@ -1,0 +1,23 @@
+<template>
+    <lightning-card class="slds-p-horizontal_medium" title="Weather">
+
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+        </template>
+
+        <div onkeyup={handleSearch} class="slds-m-horizontal_small">
+            <lightning-input
+                    name="enter-search"
+                    label=""
+                    placeholder="Search Zip Code"
+                    type="search"
+            ></lightning-input>
+        </div>
+        <template if:true={weatherData}>
+            <c-weather-today weather-data={weatherData} humidity-icon={humidityIcon}
+                             wind-icon={windIcon}></c-weather-today>
+            <c-weather-list-of-days weather-data={weatherData} rain-icon={rainIcon}
+                                    wind-icon={windIcon}></c-weather-list-of-days>
+        </template>
+    </lightning-card>
+</template>

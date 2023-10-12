@@ -1,0 +1,46 @@
+<template>
+    <template for:each={weatherData.forecast.forecastday} for:item="thisForecast" for:index="index">
+        <div key={thisForecast.index}
+             class="slds-grid slds-wrap slds-p-horizontal_medium slds-p-vertical_small slds-border_bottom">
+            <div class="slds-col slds-size_2-of-12 slds-m-top_x-small">
+                <span>
+                    <lightning-formatted-date-time value={thisForecast.date} day="2-digit"
+                                                   weekday="short"></lightning-formatted-date-time>
+                </span>
+            </div>
+            <div class="slds-col slds-size_2-of-12 slds-m-top_x-small">
+                        <span>
+                            <b>
+                                <lightning-formatted-number value={thisForecast.day.maxtemp_f}
+                                                            maximum-fraction-digits="0"></lightning-formatted-number>
+                                °
+                            </b>
+                            /
+                            <lightning-formatted-number value={thisForecast.day.mintemp_f}
+                                                        maximum-fraction-digits="0"></lightning-formatted-number>
+                            °
+                        </span>
+            </div>
+            <div class="slds-col slds-size_4-of-12">
+                <img src={thisForecast.day.condition.icon} class="medium-icon slds-m-right_xx-small"/>
+                <span>
+                    {thisForecast.day.condition.text}
+                </span>
+            </div>
+            <div class="slds-col slds-size_2-of-12 slds-m-top_x-small">
+                <img src={rainIcon} title="Rain" class="small-thin-icon slds-m-right_xx-small"/>
+                <span>
+                    {thisForecast.day.daily_chance_of_rain}%
+                </span>
+            </div>
+            <div class="slds-col slds-size_2-of-12 slds-m-top_x-small">
+                <img src={windIcon} title="Wind" class="small-icon slds-m-right_xx-small"/>
+                <span>
+                    <lightning-formatted-number value={thisForecast.day.maxwind_mph} maximum-fraction-digits="0"
+                                                class="slds-m-right_xx-small"></lightning-formatted-number>
+                    mph
+                </span>
+            </div>
+        </div>
+    </template>
+</template>
